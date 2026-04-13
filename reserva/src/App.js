@@ -1,6 +1,7 @@
 
 import './App.css';
 import React,{useState} from "react"
+import ComponenteMultiple from './components/componenteMultiple';
 
 function App() {
   const [dias, setDias]=useState(0);
