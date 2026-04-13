@@ -18,10 +18,20 @@ function App() {
 }
 
 const Saludo = (props) => {
+
+  const { nombre, apellido, edad, correo } = props.usuario;
+
   return <div>
-      <h1>Hola {props.usuario.nombre} {props.usuario.apellido}</h1>
-      <p>Tienes {props.usuario.edad} años</p>
-      <p>Correo: {props.usuario.correo}</p>
+      {nombre && apellido ? (
+        <div>
+          <h1>Hola {nombre} {apellido}</h1>
+          <p>Tienes {edad} años</p>
+          <p>Correo: {correo}</p>
+
+        </div>
+      ) : (
+        <h1>Sin datos</h1>
+      )}
     </div>
   ;
 }
