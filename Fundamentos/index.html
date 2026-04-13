@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width:device-width, initial-scale:1.0">
+        <title>Document</title>
+    </head>
+
+    <style>
+        .box {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .box__item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+
+    <body>
+
+        <h1 style="text-align: center;">D&D PICTURES</h1>
+        
+        <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;">
+            <input type="text" id="urlInput" placeholder="Url de la imagen">
+            <input type="text" id="titleInput" placeholder="Titulo">
+            <button id="addButton" onclick="agregarImagen()">Agregar imagen</button>
+        </div>
+        
+        <div id="box">
+            <div class="box__item">
+                <img src="imgs/dd1.jpg" alt="dd1" width="250" height="150">
+                <p>Imagen 1</p>
+            </div>
+            <div class="box__item">
+                <img src="imgs/dd2.jpg" alt="dd2" width="250" height="150">
+                <p>Imagen 2</p>
+            </div>
+            <div class="box__item">
+                <img src="imgs/dd3.jpg" alt="dd3" width="250" height="150">
+                <p>Imagen 3</p>
+            </div>
+            <div class="box__item">
+                <img src="imgs/dd4.jpg" alt="dd4" width="250" height="150">
+                <p>Imagen 4</p>
+            </div>
+        </div>
+
+        <script>
+            function agregarImagen() {
+                var Url = document.getElementById("urlInput").value;
+                var Title = document.getElementById("titleInput").value;
+
+                if (Url || Title) {
+                   
+                    var box = document.getElementById("box");
+                    
+                    var div = document.createElement("div");
+                    var img = document.createElement("img");
+                    img.src = Url;
+                    var p = document.createElement("p");
+                    p.textContent = Title;
+                    
+                    div.appendChild(img);
+                    div.appendChild(p);
+                    
+                    box.appendChild(div);
+
+                    document.getElementById("urlInput").value = "";
+                    document.getElementById("titleInput").value = "";
+                } else {
+                    alert("Por favor, ingresa una URL y un título para la imagen.");
+                }
+            }
+        </script>
+        
+    </body>
+</html>
