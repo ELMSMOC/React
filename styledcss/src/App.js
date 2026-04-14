@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+
 import './App.css';
+
+import { Boton1 } from './styled';
+import { Boton2 } from './styled2';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Boton1 entrar={true}>
+        Entrar
+      </Boton1>
+
+      <Boton2 entrar={false}>
+        Salir
+      </Boton2>
+
+      
+
+    
     </div>
   );
 }
