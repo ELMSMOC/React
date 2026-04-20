@@ -1,15 +1,30 @@
 
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styled, { css } from 'styled-components';
-import { Boton1 } from './styled';
+import { Boton1, Container } from './styled';
 import parrafos from './data/nopuedo.json' ;
-import { Container } from './styled';
+
 
 
 function App() {
   
   const [parrafo, setParrafo]= useState(0);
+
+  /* useEffect(() => {
+    console.log(`estas leyendo el parrafo: ${parrafo + 1}`);
+  }, [parrafo]); */ 
+
+  /* useEffect(() => {
+  const colores = ['#FF5733', '#33FF57', '#3357FF', '#F333FF'];
+  document.body.style.backgroundColor = colores[parrafo];
+}, [parrafo]); */
+
+useEffect (() => {
+  const colorAleatorio = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+  document.body.style.backgroundColor = colorAleatorio;
+  
+}, [parrafo]);
 
   const handleAnterior = () => {
     if  (parrafo > 0) {
